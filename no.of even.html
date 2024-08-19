@@ -1,0 +1,48 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Sum</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        input, button {
+            margin: 5px 0;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sum of Even Numbers</h2>
+        <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas">
+        <button onclick="calculateSum()">Calculate Sum</button>
+        <div class="result" id="sumResult"></div>
+    </div>
+    <script>
+        function calculateSum() {
+            const arrayInput = document.getElementById('arrayInput').value;
+            const numbers = arrayInput.split(',').map(Number);
+            let sum = 0;
+            for (let i = 0; i < numbers.length; i++) {
+                if (numbers[i] % 2 === 0) {
+                    sum += numbers[i];
+                }
+            }
+            document.getElementById('sumResult').innerText = `Sum of even numbers: ${sum}`;
+        }
+    </script>
+</body>
+</html>
